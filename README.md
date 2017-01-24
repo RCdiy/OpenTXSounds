@@ -11,7 +11,7 @@ Click on the links to get to the file you want. Click on the file.
 - Zip file > Click on Download
 - Text based files > Right click Raw > Save As, Download linked file.
 
-## GUI Applications
+## Mac GUI Applications
 - Sound Pack Generator.app
   - A Finder window facilitates selecting the OpenTx sound mapping file.
   - Sound files and folders are generated and placed in the same directory as the sound mapping file.
@@ -21,7 +21,7 @@ Click on the links to get to the file you want. Click on the file.
   - A sound file is generated and placed in Downloads/RCdiy/.
   - The sound is played.
 
-## Terminal Scripts
+## Mac Terminal Scripts
 - SoundPackGenerator.sh
   - ./SoundPackGenerator.sh opentx-map-file.csv
   - Sound files and folders are generated and placed in the current working directory.
@@ -30,9 +30,8 @@ Click on the links to get to the file you want. Click on the file.
   - A sound file is generated and placed in the current working directory.
 
 ## Sound Packs
-OpenTx sound packs have been generated using the Mac Tessa voice.
-
-Please e-mail me to request a missing Tessa voice sound pack.
+- OpenTx sound packs have been generated using the Mac Tessa voice.
+- Please e-mail me to request a missing Tessa voice sound pack.
 
 ### Mac Text To Speech
 Producing text to speech wav files is easy on a Mac.
