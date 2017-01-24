@@ -1,10 +1,15 @@
-# OpenTx Sounds
+# OpenTx Mac Sounds
 Mac applications and scripts to produce OpenTx text to speech audio files.
 OpenTx sound packs produced using the Mac Tessa voice.
 
 http://RCdiy.ca
 
 info@RCdiy.ca
+
+## Download Instructions
+Click on the links to get to the file you want. Click on the file.
+- Zip file > Click on Download
+- Text based files > Right click Raw > Save As, Download linked file.
 
 ## GUI Applications
 - Sound Pack Generator.app
@@ -16,7 +21,7 @@ info@RCdiy.ca
   - A sound file is generated and placed in Downloads/RCdiy/.
   - The sound is played.
 
-## Scripts
+## Terminal Scripts
 - SoundPackGenerator.sh
   - ./SoundPackGenerator.sh opentx-map-file.csv
   - Sound files and folders are generated and placed in the current working directory.
@@ -24,13 +29,18 @@ info@RCdiy.ca
   - ./TextToWav.sh hello.wav "Welcome to open t x."
   - A sound file is generated and placed in the current working directory.
 
+## Sound Packs
+OpenTx sound packs have been generated using the Mac Tessa voice.
+
+Please e-mail me to request a missing Tessa voice sound pack.
+
 ### Mac Text To Speech
 Producing text to speech wav files is easy on a Mac.
 - say --file-format=WAVE --data-format=LEI16@32000 -v $VOICE -o $FILEOUT $PHRASE
 - say --file-format=WAVE --data-format=LEI16@32000 -v Tessa -o tada.wav Welcome
 
 ### OpenTx Sound Mapping Files
-OpenTx uses a simple semicolon separated file to map out the directory path, file name and spoken phrase.
+OpenTx uses a simple semicolon separated file to map the directory path, file name and spoken phrase.
 - path;name.wav;spoken phrase
 - SOUNDS/en;fm-thr.wav;flight mode!, thermal right
 - Location:
