@@ -8,11 +8,17 @@ info@RCdiy.ca
 
 ## GUI Applications
 - Sound Pack Generator.app
+-- A Finder window facilitates selecting the OpenTx sound mapping file.
+-- Sound files and folders are generated and placed in the same directory as the sound mapping file.
+-- A Finder window shows the location of the produced files.
 - Text To Wav.app
+-- A text entry windows accepts the phrase to be spoken.
+-- A sound file is generated and placed in Downloads/RCdiy/.
+-- The sound is played.
 
 ## Scripts
 - SoundPackGenerator.sh
-- Text To Wav.sh
+- TextToWav.sh
 
 ## Mac Text To Speech
 Producing text to speech wav files is easy on a Mac.
