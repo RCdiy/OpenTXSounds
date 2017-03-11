@@ -60,9 +60,12 @@ Producing text to speech wav files is easy on a Mac.
 - say --file-format=WAVE --data-format=LEI16@32000 -v Tessa -o tada.wav Welcome
 
 ## To determine which voices are available
- Mac System Preferences > Accessibility > Speech > System Voice:
+ - Mac System Preferences > Accessibility > Speech > System Voice:
+
  OR
- Terminal > say -v?
+
+ - Terminal > say -v?
+ 
 #
 ## To test voices
 - Terminal > say -v <voice> <Phrase>
