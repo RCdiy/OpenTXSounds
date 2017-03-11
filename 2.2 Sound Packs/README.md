@@ -15,4 +15,11 @@ If the sound pack version does not match the version expected by the firmware sp
 #### opentx.sdcard.version
 - A text file which can be opened using a simple plain text editor.
 - Contains a single line:
+
 2.2V0005
+
+## Using the sound packs
+- Tx SD CARD > Remove or rename the SOUNDS directory.
+- Download the sound pack.
+- Unzip the downloaded file.
+- Copy the SOUNDS folder and the opentx.sdcard.version file to the SD CARD
