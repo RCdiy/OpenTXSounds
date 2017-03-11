@@ -1,8 +1,8 @@
 # OpenTX Sounds
-- OPENTX sound packs.
+- OpenTX sound packs.
 - MAC GUI Apps & Terminal Scripts
--- Generate individual sound phrases.
--- Generate entire sound packs.
+  - Generate individual sound phrases.
+  - Generate entire sound packs.
 
 http://RCdiy.ca
 
