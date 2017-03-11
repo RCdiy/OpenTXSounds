@@ -1,5 +1,5 @@
 # Mac Apps & Scripts To Generate OpenTX Sounds
-Mac applications and scripts to produce OpenTx text to speech audio files.
+Mac applications and scripts to produce OpenTX text to speech audio files.
 
 http://RCdiy.ca
 
@@ -7,7 +7,7 @@ info@RCdiy.ca
 
 ## Mac GUI Applications
 ### Sound Pack Generator.app
-- A Finder window facilitates selecting the OpenTx sound mapping file.
+- A Finder window facilitates selecting the OpenTX sound mapping file.
 - Sound files and folders are generated and placed in the same directory as the sound mapping file.
 - A Finder window shows the location of the produced files.
 
@@ -19,7 +19,7 @@ info@RCdiy.ca
 ## Mac Terminal Scripts
 ### SoundPackGenerator.sh
 #### ./SoundPackGenerator.sh en-US-test.csv
-- Reads in a file which contains the OpenTx text to speach definitions.
+- Reads in a file which contains the OpenTX text to speach definitions.
 - Produces a wav sound file with the filename and spoken text provided.
 - The files are placed in the appropriate folders as defined in the file.
 
@@ -32,7 +32,7 @@ info@RCdiy.ca
 - A sound file is generated and placed in the current working directory.
 
 ## OpenTX Sound Mapping Files
-OpenTx uses a simple semicolon separated file to map the directory path, file name and spoken phrase.
+OpenTX uses a simple semicolon separated file to map the directory path, file name and spoken phrase.
 - directory_path;name.wav;phrase
 
 ### Examples

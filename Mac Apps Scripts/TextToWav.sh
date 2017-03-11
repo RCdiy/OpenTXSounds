@@ -1,6 +1,6 @@
 #!/bin/sh
 # License https://www.gnu.org/licenses/gpl-3.0.en.html
-# Mac OpenTx Sound File Generator
+# Mac OpenTX Sound File Generator
 # SOUNDS
 # Place this file in the root of the SD Card copy on your computer
 #

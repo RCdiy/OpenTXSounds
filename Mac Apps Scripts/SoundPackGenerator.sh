@@ -1,6 +1,6 @@
 #!/bin/sh
 # License https://www.gnu.org/licenses/gpl-3.0.en.html
-# Mac OpenTx Sound Pack Generator
+# Mac OpenTX Sound Pack Generator
 # SOUNDS
 # Place this file in the root of the SD Card copy on your computer
 #
@@ -9,7 +9,7 @@
 #
 # Description
 # ./SoundPackGenerator.sh en-US-test.csv
-# Reads in a file which contains the OpenTx text to speach definitions.
+# Reads in a file which contains the OpenTX text to speach definitions.
 # Produces a wav sound file with the filename and spoken text provided.
 # The files are placed in the appropriate folders as defined in the file.
 #
@@ -27,7 +27,7 @@
 #     Then type in what you want spoken and press Enter
 #     To exit press Ctrl + C
 #
-# OpenTx text to speach definitions file format
+# OpenTX text to speach definitions file format
 #     directory_path;name.wav;phrase
 #     Examples
 #       SOUNDS/en/SYSTEM;0000.wav;0
@@ -52,7 +52,7 @@ if [ "$FileIn" == "" ] || ! [ -f "$FileIn" ] ; then
  echo "\t $0 file.csv [optional voice]"
  echo "\t\t where file.csv format path;file.wav;phrase"
  echo "\t\t path format */lang/*"
- echo "\t An OpenTx sound pack will be generated in the corresponding language."
+ echo "\t An OpenTX sound pack will be generated in the corresponding language."
  echo Example:
  echo "\t $0 english-taranis.csv"
  echo "\t $0 english-taranis.csv Tessa"
