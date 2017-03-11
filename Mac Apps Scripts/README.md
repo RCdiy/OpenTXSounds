@@ -24,6 +24,6 @@ Click on the links to get to the file you want. Click on the file.
 ### SoundPackGenerator.sh
   - ./SoundPackGenerator.sh opentx-map-file.csv
   - Sound files and folders are generated and placed in the current working directory.
-###TextToWav.sh
+### TextToWav.sh
   - ./TextToWav.sh hello.wav "Welcome to open t x."
   - A sound file is generated and placed in the current working directory.
