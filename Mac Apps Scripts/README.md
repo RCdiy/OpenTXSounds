@@ -35,6 +35,7 @@ info@RCdiy.ca
  directory_path;name.wav;phrase
 ### Examples
  SOUNDS/en/SYSTEM;0000.wav;0
+
  SOUNDS/en;fm-thmr.wav;flight mode!, thermal right
 ### File Names
 - SYSTEM folder's file names up to 8 characters plus .wav
