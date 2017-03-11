@@ -1,6 +1,8 @@
-# OpenTx Mac Sounds
-Mac applications and scripts to produce OpenTx text to speech audio files.
-OpenTx sound packs produced using the Mac Tessa voice.
+# OpenTX Sounds
+- OPENTX sound packs.
+- MAC GUI Apps & Terminal Scripts
+-- Generate individual sound phrases.
+-- Generate entire sound packs.
 
 http://RCdiy.ca
 
