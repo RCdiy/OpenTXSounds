@@ -56,7 +56,7 @@ OpenTx uses a simple semicolon separated file to map the directory path, file na
 
 # Mac Text To Speech
 Producing text to speech wav files is easy on a Mac.
-- say --file-format=WAVE --data-format=LEI16@32000 -v $VOICE -o <fileout> <phrase>
+- say --file-format=WAVE --data-format=LEI16@32000 -v $VOICE -o \<fileout\> \<phrase\>
 - say --file-format=WAVE --data-format=LEI16@32000 -v Tessa -o tada.wav Welcome
 
 ## To determine which voices are available
@@ -65,8 +65,8 @@ Producing text to speech wav files is easy on a Mac.
  OR
 
  - Terminal > say -v?
- 
+
 #
 ## To test voices
-- Terminal > say -v <voice> <Phrase>
+- Terminal > say -v \<voice\> \<Phrase\>
 - Terminal > say -v Alex "Welcome to open T X"
