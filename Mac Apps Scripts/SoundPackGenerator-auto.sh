@@ -10,7 +10,7 @@
 # Description
 # Reads in a file which contains the OpenTx text to speach definitions.
 # Produces a wav sound file with the filename and spoken text provided.
-# The files are placed in the appropriate foldrs as provided.
+# The files are placed in the appropriate folders as defined in the file.
 #
 # OpenTx text to speach definitions file format
 #     directory_path;name.wav;phrase
@@ -32,11 +32,16 @@
 # To change the voice edit VOICE=Tessa below. E.g. VOICE=Alex
 # The voice you use must be of the same langiage as the phrase
 # To auto select vocie and language Voice=auto
-Voice=$2
+
 #
-if [ "$Voice" == "" ] ; then
+if [ "$2" == "" ] ; then
   Voice=auto
+else
+  Voice=$2
 fi
+# Used when posting to github
+ZipAndCleanUp=false
+
 # ------------------------------------------------------------------------------
 FileIn=$1
 # Usage check
@@ -85,5 +90,15 @@ else
     system("say -v " Voice " -o " FileOut " --data-format=LEI16@32000  " "\""Phrase"\"")
     print FileOut
   }' $FileIn
+
+  if [ $ZipAndCleanUp == true ] ; then
+    Archive=`echo $FileIn | cut -d . -f1`
+    zip -r $Archive opentx.sdcard.version $FileIn SOUNDS
+    if [ $? == 0 ] ; then
+      mkdir !toDelete
+      mv SOUNDS !toDelete/
+      mv $FileIn !toDelete/
+    fi
+  fi
 
 fi
