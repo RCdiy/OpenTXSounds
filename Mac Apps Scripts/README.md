@@ -31,12 +31,39 @@ info@RCdiy.ca
 - ./TextToWav.sh hello.wav "Welcome to open t x."
 - A sound file is generated and placed in the current working directory.
 
-## OpenTx text to speach definitions file format
- directory_path;name.wav;phrase
+## OpenTX Sound Mapping Files
+OpenTx uses a simple semicolon separated file to map the directory path, file name and spoken phrase.
+- directory_path;name.wav;phrase
+
 ### Examples
  SOUNDS/en/SYSTEM;0000.wav;0
 
  SOUNDS/en;fm-thmr.wav;flight mode!, thermal right
-### File Names
+
+### Sound File Names
 - SYSTEM folder's file names up to 8 characters plus .wav
 - Other file names up to 6 characters plus .wav
+
+### Mapping File Names
+- language-country-transmitter.csv
+
+### Example
+- en-US-taranis.csv
+
+### Location / Where to get the .csv file
+- Companion > File > Download > Download Voice
+- SOUNDS/<language>/SYSTEM/
+
+# Mac Text To Speech
+Producing text to speech wav files is easy on a Mac.
+- say --file-format=WAVE --data-format=LEI16@32000 -v $VOICE -o <fileout> <phrase>
+- say --file-format=WAVE --data-format=LEI16@32000 -v Tessa -o tada.wav Welcome
+
+## To determine which voices are available
+ Mac System Preferences > Accessibility > Speech > System Voice:
+ OR
+ Terminal > say -v?
+#
+## To test voices
+- Terminal > say -v <voice> <Phrase>
+- Terminal > say -v Alex "Welcome to open T X"
