@@ -8,16 +8,14 @@
 # Web: http://RCdiy.ca
 #
 # Description
+# ./SoundPackGenerator.sh en-US-test.csv
 # Reads in a file which contains the OpenTx text to speach definitions.
 # Produces a wav sound file with the filename and spoken text provided.
-# The files are placed in the appropriate foldrs as provided.
+# The files are placed in the appropriate folders as defined in the file.
 #
-# OpenTx text to speach definitions file format
-#     directory_path;name.wav;phrase
-#     Examples
-#       SOUNDS/en/SYSTEM;0000.wav;0
-#       SOUNDS/en;fm-thmr.wav;flight mode!, thermal right
-# File names are to be up to 8 characters plus .wav
+# ./SoundPackGenerator.sh en-US-test.csv Tessa
+# Does the same as above using the Tessa voice.
+# When the voice name is not provided a default voice is used.
 #
 # To determine which voices are available
 #   Mac System Preferences > Accessibility > Speech > System Voice:
@@ -29,22 +27,57 @@
 #     Then type in what you want spoken and press Enter
 #     To exit press Ctrl + C
 #
-# To change the voice edit VOICE=Tessa below. E.g. VOICE=Alex
-Voice=Tessa
+# OpenTx text to speach definitions file format
+#     directory_path;name.wav;phrase
+#     Examples
+#       SOUNDS/en/SYSTEM;0000.wav;0
+#       SOUNDS/en;fm-thmr.wav;flight mode!, thermal right
+# File names are to be up to 8 characters plus .wav
+
+#
+if [ "$2" == "" ] ; then
+  Voice=auto
+else
+  Voice=$2
+fi
+# Used when posting to github
+ZipAndCleanUp=false
 
 # ------------------------------------------------------------------------------
-
-if [ "$1" == "" ]; then
+FileIn=$1
+# Usage check
+if [ "$FileIn" == "" ] || ! [ -f "$FileIn" ] ; then
  echo
  echo Usage:
- echo "\t $0 text file with OpenTx sound map definitions"
- echo
+ echo "\t $0 file.csv [optional voice]"
+ echo "\t\t where file.csv format path;file.wav;phrase"
+ echo "\t\t path format */lang/*"
+ echo "\t An OpenTx sound pack will be generated in the corresponding language."
  echo Example:
  echo "\t $0 english-taranis.csv"
- echo "\t An OpenTx sound pack will be generated."
+ echo "\t $0 english-taranis.csv Tessa"
  echo
+ exit 1
 else
-  FileIn=$1
+  if [ "$Voice" == "auto" ] ; then
+    # Determine langauge
+    Language=`head -n 1 $FileIn | cut -d / -f 2 `
+    if [ "$Language" == "" ]; then
+      echo "$Language Language not found"
+      exit 1
+    fi
+    echo "Language is $Language"
+    # Determine voice
+    Under="_" #say -v? output has languages in the format en_UK
+    Voice=`say -v? | grep "$Language$Under" | head -n 1 | cut -d " " -f1`
+    if [ "$Voice" == "" ] ; then
+      echo "Voice matching language not found."
+      echo "To add voices > System Preferences > Accessibility > Speech"
+      echo "\t System Voice > Customize (scroll to bottom)"
+      exit 1
+    fi
+    echo "Voice being used $Voice"
+  fi
 
   awk -F ";" -v Voice=$Voice '{
     FileOut=$1"/"$2
@@ -55,8 +88,18 @@ else
       system("mkdir -p " $1)
     }
 
-    system("say -v " Voice " -o " FileOut " --data-format=LEI16@32000  " Phrase)
-
+    system("say -v " Voice " -o " FileOut " --data-format=LEI16@32000  " "\""Phrase"\"")
+    print FileOut
   }' $FileIn
+
+  if [ $ZipAndCleanUp == true ] ; then
+    Archive=`echo $FileIn | cut -d . -f1`
+    zip -r $Archive opentx.sdcard.version $FileIn SOUNDS
+    if [ $? == 0 ] ; then
+      mkdir !toDelete
+      mv SOUNDS !toDelete/
+      mv $FileIn !toDelete/
+    fi
+  fi
 
 fi
