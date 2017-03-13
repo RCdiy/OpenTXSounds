@@ -96,9 +96,11 @@ else
     Archive=`echo $FileIn | cut -d . -f1`
     zip -r $Archive opentx.sdcard.version $FileIn SOUNDS
     if [ $? == 0 ] ; then
-      mkdir !toDelete
-      mv SOUNDS !toDelete/
-      mv $FileIn !toDelete/
+      # mkdir !toDelete
+      # mv -f SOUNDS !toDelete/
+      # mv -f $FileIn !toDelete/
+      rm -rf SOUNDS
+      rm -f $FileIn
     fi
   fi
 
