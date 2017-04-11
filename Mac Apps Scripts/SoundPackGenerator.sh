@@ -49,13 +49,14 @@ FileIn=$1
 if [ "$FileIn" == "" ] || ! [ -f "$FileIn" ] ; then
  echo
  echo Usage:
- echo "\t $0 file.csv [optional voice]"
- echo "\t\t where file.csv format path;file.wav;phrase"
- echo "\t\t path format */lang/*"
+ echo "\t $0 ln-file.csv [optional voice]"
+ echo "\t\t where ln is the language, en for english, fr for french and so on"
+ echo "\t\t csv format path;file.wav;phrase"
+ echo "\t\t path format */ln/*"
  echo "\t An OpenTX sound pack will be generated in the corresponding language."
  echo Example:
- echo "\t $0 english-taranis.csv"
- echo "\t $0 english-taranis.csv Tessa"
+ echo "\t $0 en-US-test.csv"
+ echo "\t $0 en-US-test.csv Tessa"
  echo
  exit 1
 else
