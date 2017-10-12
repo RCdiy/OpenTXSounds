@@ -6,6 +6,14 @@
 #
 # Author: RC diy
 # Web: http://RCdiy.ca
+#
+# Instructions
+#
+# Place this file, SoundPackGenerator.sh and SD Card contents zip file
+#  in the same folder.
+#  Edit this file and update "version="
+#  Execute this script
+
 version="2.2V0009"
 sdcard="sdcard-horus-"$version
 unzip -q $sdcard.zip -d temp
