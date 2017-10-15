@@ -14,7 +14,7 @@
 #  Edit this file and update "version="
 #  Execute this script
 
-version="2.2V0009"
+version="2.2V0011"
 sdcard="sdcard-horus-"$version
 unzip -q $sdcard.zip -d temp
 pack=sounds-`echo $sdcard | cut -d - -f 2,3`
@@ -30,6 +30,7 @@ rm -rf SOUNDS
 ../SoundPackGenerator.sh es-ES-taranis.csv
 ../SoundPackGenerator.sh fr-FR-taranis.csv
 ../SoundPackGenerator.sh it-IT-taranis.csv
+../SoundPackGenerator.sh pt-PT-taranis.csv
 cd ..
 
 sdcard="sdcard-taranis-x7-"$version
@@ -47,6 +48,7 @@ rm -rf SOUNDS
 ../SoundPackGenerator.sh es-ES-taranis.csv
 ../SoundPackGenerator.sh fr-FR-taranis.csv
 ../SoundPackGenerator.sh it-IT-taranis.csv
+../SoundPackGenerator.sh pt-PT-taranis.csv
 cd ..
 
 sdcard="sdcard-taranis-x9-"$version
@@ -64,4 +66,5 @@ rm -rf SOUNDS
 ../SoundPackGenerator.sh es-ES-taranis.csv
 ../SoundPackGenerator.sh fr-FR-taranis.csv
 ../SoundPackGenerator.sh it-IT-taranis.csv
+../SoundPackGenerator.sh pt-PT-taranis.csv
 cd ..
