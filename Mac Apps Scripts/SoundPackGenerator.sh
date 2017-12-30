@@ -80,7 +80,7 @@ else
     echo "Voice being used $Voice"
   fi
 
-  awk -F ";" -v Voice=$Voice '{
+  awk -F ";" -v Voice=$Voice 'NF && $1!~/^#/ {
     FileOut=$1"/"$2
     Phrase=$3
 
