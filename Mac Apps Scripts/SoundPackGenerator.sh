@@ -89,7 +89,7 @@ else
       system("mkdir -p " $1)
     }
 
-    system("say -v " Voice " -o " FileOut " --data-format=LEI16@32000  " "\""Phrase"\"")
+    system("say --file-format=WAVE --data-format=LEI16@32000 --channels=1 -v " Voice " -o " FileOut " " "\""Phrase"\"")
     print FileOut
   }' $FileIn
 
