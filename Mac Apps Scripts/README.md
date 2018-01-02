@@ -32,12 +32,13 @@ info@RCdiy.ca
 - A sound file is generated and placed in the current working directory.
 
 ## OpenTX Sound Mapping Files
-OpenTX uses a simple semicolon separated file to map the directory path, file name and spoken phrase.
+OpenTX uses a simple semicolon separated file to map the directory path, file name and spoken phrase. Blank lines and lines starting with '#' are ignored.
 - directory_path;name.wav;phrase
 
 ### Examples
  SOUNDS/en/SYSTEM;0000.wav;0
 
+ # This is a comment line
  SOUNDS/en;fm-thmr.wav;flight mode!, thermal right
 
 ### Sound File Names

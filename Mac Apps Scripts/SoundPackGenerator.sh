@@ -80,7 +80,9 @@ else
     echo "Voice being used $Voice"
   fi
 
-  awk -F ";" -v Voice=$Voice '{
+  # awk -F ";" -v Voice=$Voice '{
+  # skip blank lines, starting with #
+  awk -F ";" -v Voice=$Voice 'NF && $1!~/^#/ {
     FileOut=$1"/"$2
     Phrase=$3
 
@@ -89,7 +91,9 @@ else
       system("mkdir -p " $1)
     }
 
-    system("say -v " Voice " -o " FileOut " --data-format=LEI16@32000  " "\""Phrase"\"")
+    # system("say -v " Voice " -o " FileOut " --data-format=LEI16@32000  " "\""Phrase"\"")
+    # specified output because on some systems it had problems
+    system("say --file-format=WAVE --data-format=LEI16@32000 --channels=1 -v " Voice " -o " FileOut " " "\""Phrase"\"")
     print FileOut
   }' $FileIn
 
